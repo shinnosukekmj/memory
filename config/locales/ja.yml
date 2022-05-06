@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      game: ゲーム
+    attributes:
+      game:
+        title: タイトル
+        body: 本文
+        intro: 本文2

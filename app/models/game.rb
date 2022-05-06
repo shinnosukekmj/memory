@@ -4,6 +4,5 @@ class Game < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
   validates :intro, presence: true
-  validates :image, presence: true
 
 end
