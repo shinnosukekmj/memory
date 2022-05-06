@@ -1,28 +1,30 @@
-<h1>編集画面</h1>
+<div class="container mt-5">
+  <h1>編集画面</h1>
 
-<% if @game.errors.any? %>
-  <%= @game.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @game.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @game.errors.any? %>
+    <%= @game.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_with model: @game,url: memory_path(@game.id) ,method: :patch do |f| %>
+  <%= form_with model: @game,url: memory_path(@game.id) ,method: :patch do |f| %>
 
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
+    <h4>タイトル</h4>
+    <%= f.text_field :title %>
 
-  <h4>本文</h4>
-  <%= f.text_area :body %>
+    <h4>本文</h4>
+    <%= f.text_area :body %>
 
-  <h4>本文2</h4>
-  <%= f.text_area :intro %>
+    <h4>本文2</h4>
+    <%= f.text_area :intro %>
 
-  <h4>画像</h4>
-  <%= f.file_field :image, accept: "image/*" %>
+    <h4>画像</h4>
+    <%= f.file_field :image, accept: "image/*" %>
 
-  <%= f.submit '保存' %>
+    <%= f.submit '保存' %>
 
-<% end %>
+  <% end %>
+</div>
