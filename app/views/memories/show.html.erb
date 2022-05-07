@@ -1,20 +1,20 @@
 <div class="container mt-5">
   <h2>タイトル</h2>
   <p><%= @game.title %></p>
-  
+
   <h2>本文</h2>
   <p><%= @game.body %></p>
-  
+
   <h2>本文2</h2>
   <p><%= @game.intro %></p>
-  
+
   <p>画像</p>
     <% if @game.image.attached? %>
       <%= image_tag @game.image, size: "200x200" %>
     <% else %>
       <%= image_tag 'no_image', size: "200x200" %>
     <% end %>
-  
+
   <%= link_to "編集", edit_memory_path(@game.id) %>
   <%= link_to "削除", memory_path(@game.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 </div>
