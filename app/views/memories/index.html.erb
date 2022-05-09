@@ -42,6 +42,11 @@
         <p>タイトル</p>
         <span>
           <%= link_to game.title, memory_path(game.id) %>
+          <% if game.image.attached? %>
+            <%= image_tag game.image, size: "30x30" %>
+           <% else %>
+            <%= image_tag 'no_image', size: "30x30" %>
+          <% end %>
         </span>
 
       <% end %>
