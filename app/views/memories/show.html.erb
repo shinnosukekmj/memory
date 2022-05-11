@@ -17,4 +17,8 @@
 
   <%= link_to "編集", edit_memory_path(@game.id) %>
   <%= link_to "削除", memory_path(@game.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  
+  <%= link_to :back do %>
+    <button>戻る</button>
+  <% end %>
 </div>
